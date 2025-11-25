@@ -214,9 +214,14 @@ class MGit:
                 print(f"{Fore.CYAN}{Style.BRIGHT}┌── {header_str} {Style.RESET_ALL}{Fore.CYAN}in {repo_path}")
                 
                 if result.returncode == 0:
+                    # 成功时，同时打印 stdout 和 stderr
+                    # Git 的很多正常输出(如 push/fetch 的进度)都在 stderr 中
                     if output:
                         print(f"{output}")
-                    else:
+                    if error:
+                        print(f"{error}")
+                        
+                    if not output and not error:
                         print(f"{Fore.GREEN}√ 完成 (无输出)")
                 else:
                     print(f"{Fore.RED}× 失败 (Code: {result.returncode})")
