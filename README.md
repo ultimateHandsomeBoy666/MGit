@@ -6,7 +6,7 @@ MGit 是一个轻量级的命令行工具，用于同时管理多个 Git 仓库�
 
 ### 前置要求
 
-- Python 3.6+ * (可选)
+- Python 3.6+
 - `pip install colorama` 以获得彩色输出体验（Windows下推荐安装）。
   - 如果 `pip install colorama` 安装成功但是颜色不生效，可能是默认 pip 和 默认 python3 版本不一致，可以使用 `python3 -m pip install colorama` 来安装
 
